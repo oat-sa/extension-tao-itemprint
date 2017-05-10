@@ -37,6 +37,7 @@ return array(
     'install' => array(
         'php' => array(
             \oat\taoItemPrint\scripts\install\SetItemThemes::class,
+            \oat\taoItemPrint\scripts\install\SetNewTestRunner::class,
         )
     ),
     'update' => \oat\taoItemPrint\scripts\update\Updater::class,
