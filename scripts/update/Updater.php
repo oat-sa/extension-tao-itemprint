@@ -25,6 +25,7 @@ use common_ext_ExtensionUpdater;
 
 /**
  * Update the extension
+ * @deprecated use migrations instead. See https://github.com/oat-sa/generis/wiki/Tao-Update-Process
  */
 class Updater extends common_ext_ExtensionUpdater
 {
@@ -36,5 +37,11 @@ class Updater extends common_ext_ExtensionUpdater
      */
     public function update($initialVersion)
     {
+        $this->skip('1.0.0', '1.0.1');
+        
+        //Updater files are deprecated. Please use migrations.
+        //See: https://github.com/oat-sa/generis/wiki/Tao-Update-Process
+
+        $this->setVersion($this->getExtension()->getManifest()->getVersion());
     }
 }
